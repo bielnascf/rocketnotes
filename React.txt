@@ -1,0 +1,34 @@
+- React Router DOM
+	- Lib que permite aplicar navegação dentro da aplicação
+	- npm install react-router-dom
+	- criar uma pasta dentro de src chamada routes
+	- separar as rotas de aplicação das rotas de autenticação
+		- Ex: app.routes.jsx -> Rotas da aplicação (Navegação entre as telas (é interessante que ela seja permitida após a autenticação, ou seja, com o usuário logado))
+		- Ex: auth.routes.jsx -> Rotas de autenticação (Telas de login e cadastro, por exemplo, ligadas a autenticação)
+		- import { Routes, Route } from 'react-routes-dom'
+		- export function AppRoutes() {
+			return(
+				<Routes>
+					<Route path="*aqui vai o path na url q vc deseja* element={*aqui vai o elemento que você deseja*}"
+					.
+					.
+					.
+				</Routes>
+			)
+		  }
+		
+		- é interessante criar dentro da pasta routes, um arquivo index.jsx para colocar de fato a função que aplica as rotas
+		- import { BrowserRouter } from 'react-router-dom'
+		- import { AppRoutes } from './app.routes'
+		- export function Routes() {
+			return (
+				<BrowserRouter>
+					<AppRoutes />
+				</BrowserRouter>
+			)
+		  }
+		- Essa função Routes será importada e adicionada dentro do arquivo main.jsx
+		- Para aplicar a navegação...
+			- import { Link } from 'react-router-dom'
+			- Ele permitirá utilizar um elemento <Link to="*nome da rota que você quer (que faz sentido com a rota que voce criou)*"></Link> no index.js de cada componente criado que permitirá a navegação entre as páginas
+			- 

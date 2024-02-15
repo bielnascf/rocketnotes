@@ -9,11 +9,10 @@ import { Section } from '../../components/Section'
 
 
 
-
 export function Home() {
     return(
         <Container>
-            <Brand>
+            <Brand to="/">
                 <h1>Rocketnotes</h1>
             </Brand>
 
@@ -49,7 +48,7 @@ export function Home() {
                 </Section>
             </Content>
 
-            <NewNote>
+            <NewNote to="/new">
                 <FiPlus />
                 Criar nota
             </NewNote>

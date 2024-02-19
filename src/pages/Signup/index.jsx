@@ -16,6 +16,10 @@ export function Signup() {
 
     const navigate = useNavigate()
 
+    function handleBack() {
+        navigate(-1)
+    }
+
     function handleSignUp() {
         if(!name || !email || !password) {
             return Swal.fire({
@@ -96,7 +100,7 @@ export function Signup() {
 
                 <Button title="Cadastrar" onClick={handleSignUp}/>
 
-                <Link to="/">
+                <Link onClick={handleBack}>
                     Voltar para o login
                 </Link>
             </Form>
